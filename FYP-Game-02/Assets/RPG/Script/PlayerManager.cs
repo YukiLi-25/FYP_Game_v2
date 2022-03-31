@@ -1,25 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
+
+/* Keeps track of the player */
 
 public class PlayerManager : MonoBehaviour
 {
-    #region Singleton
 
-    public static PlayerManager instance;
+	#region Singleton
 
-    private void Awake()
-    {
-        instance = this;
-    }
+	public static PlayerManager instance;
 
-    #endregion
+	void Awake()
+	{
+		instance = this;
+	}
 
-    public GameObject player;
+	#endregion
 
-    public void KillPlayer()
-    {
-        EditorSceneManager.LoadScene(EditorSceneManager.GetActiveScene().buildIndex);
-    }
+	public GameObject player;
+
+	public void KillPlayer()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
 }

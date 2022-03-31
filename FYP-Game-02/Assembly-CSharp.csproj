@@ -57,17 +57,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Components\FxaaComponent.cs" />
+    <Compile Include="Assets\Customization\Script\CustomizeColor.cs" />
     <Compile Include="Assets\RPG\Script\Inventory\InventoryUI.cs" />
     <Compile Include="Assets\RPG\Script\Inventory\Inventory.cs" />
+    <Compile Include="Assets\Customization\Script\CustomizeModels.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Utils\ColorGradingCurve.cs" />
+    <Compile Include="Assets\NoteBook System\StickerManager.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
     <Compile Include="Assets\RPG\Script\CharacterAnimator.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Models\EyeAdaptationModel.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
+    <Compile Include="Assets\NoteBook System\Drag&amp;Drop_2D\Scritp\Dragger.cs" />
     <Compile Include="Assets\RPG\Script\Controllers\EnemyController.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\RPG\Script\Enemy.cs" />
@@ -82,7 +86,10 @@
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Models\GrainModel.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\PostProcessingModel.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\PostProcessingProfile.cs" />
+    <Compile Include="Assets\NoteBook System\Drag&amp;Drop_2D\Scritp\DragAndDrop.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Components\GrainComponent.cs" />
+    <Compile Include="Assets\NoteBook System\Building System\BuildingManager.cs" />
+    <Compile Include="Assets\NoteBook System\Drag&amp;Drop_2D\Scritp\UI_Drag.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\PostProcessingContext.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Components\MotionBlurComponent.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
@@ -115,6 +122,7 @@
     <Compile Include="Assets\RPG\Script\Controllers\PlayerMotor.cs" />
     <Compile Include="Assets\RPG\Script\PlayerManager.cs" />
     <Compile Include="Assets\RPG\Script\EquipmentManager.cs" />
+    <Compile Include="Assets\Customization\Script\CustomizeHair.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Components\FogComponent.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Models\BloomModel.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Models\DepthOfFieldModel.cs" />
@@ -122,13 +130,14 @@
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
     <Compile Include="Assets\RPG\Environment\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\NoteBook System\Drag&amp;Drop_2D\Scritp\Dragger.cs" />
-    <Compile Include="Assets\NoteBook System\Drag&amp;Drop_2D\Scritp\UI_Drag.cs" />
-    <Compile Include="Assets\NoteBook System\Drag&amp;Drop_2D\Scritp\DragAndDrop.cs" />
-    <Compile Include="Assets\Customization\Script\CustomizeModels.cs" />
-    <Compile Include="Assets\Customization\Script\CustomizeColor.cs" />
-    <Compile Include="Assets\Customization\Script\CustomizeHair.cs" />
-    <Compile Include="Assets\NoteBook System\Building System\BuildingManager.cs" />
+    <Compile Include="Assets\NoteBook System\Rotation\Rotator.cs" />
+    <Compile Include="Assets\NoteBook System\Rotation\ActivateOjbect.cs" />
+    <Compile Include="Assets\NoteBook System\Rotation\DragAndRotate.cs" />
+    <Compile Include="Assets\NoteBook System\Drag&amp;Drop_3D\DragObject.cs" />
+    <Compile Include="Assets\NoteBook System\ObjectPool\ObjectPooler.cs" />
+    <Compile Include="Assets\NoteBook System\ObjectPool\CubeSpawer.cs" />
+    <Compile Include="Assets\NoteBook System\ObjectPool\Cube.cs" />
+    <Compile Include="Assets\NoteBook System\ObjectPool\IPooledObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\RPG\Environment\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
@@ -741,26 +750,20 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    <Reference Include="Unity.InternalAPIEngineBridge.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -770,6 +773,12 @@
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Path.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
@@ -786,35 +795,35 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Path.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEngineBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

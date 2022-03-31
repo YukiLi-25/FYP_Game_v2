@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildingManager : MonoBehaviour
 {
@@ -12,15 +13,36 @@ public class BuildingManager : MonoBehaviour
     private RaycastHit hit;
     [SerializeField] private LayerMask layerMask;
 
+    public float rotateAmount;
+
+    public float gridSize;
+    bool gridOn;
+    [SerializeField] private Toggle gridToggle;
+
     void Update()
     {
-        if(pendingObject != null)
+        if (pendingObject != null)
         {
-            pendingObject.transform.position = pos;
+            if (gridOn)
+            {
+                pendingObject.transform.localPosition = new Vector3(
+                    RoundToNearestGrid(pos.x),
+                    RoundToNearestGrid(pos.y),
+                    RoundToNearestGrid(pos.z)
+                    );
+            }
+            else
+            {
+                pendingObject.transform.position = pos;
+            }
 
             if (Input.GetMouseButtonDown(0))
             {
                 PlaceObject();
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                RotateObject();
             }
         }
     }
@@ -30,11 +52,16 @@ public class BuildingManager : MonoBehaviour
         pendingObject = null;
     }
 
+    public void RotateObject()
+    {
+        pendingObject.transform.Rotate(Vector3.up, rotateAmount);
+    }
+
     private void FixedUpdate()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if(Physics.Raycast(ray, out hit, 1000, layerMask))
+        if (Physics.Raycast(ray, out hit, 1000, layerMask))
         {
             pos = hit.point;
         }
@@ -42,6 +69,26 @@ public class BuildingManager : MonoBehaviour
 
     public void SelectObject(int index)
     {
-        pendingObject = Instantiate(objects[index], pos , transform.rotation);
+        pendingObject = Instantiate(objects[index], pos, transform.rotation);
+    }
+
+    public void ToggleGrid()
+    {
+        if (gridToggle.isOn)
+        {
+            gridOn = true;
+        }
+        else { gridOn = false; }
+    }
+
+    float RoundToNearestGrid(float pos)
+    {
+        float xDiff = pos % gridSize;
+        pos -= xDiff;
+        if(xDiff > (gridSize / 2))
+        {
+            pos += gridSize;
+        }
+        return pos;
     }
 }

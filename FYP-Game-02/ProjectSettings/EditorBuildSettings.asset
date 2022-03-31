@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/NoteBook System/StickerManager.unity
+    guid: 45733b0b19d2daf4d9299e7d1cf6364b
+  - enabled: 1
+    path: Assets/NoteBook System/Drag&Drop_3D/Drag&Drop_3D.unity
+    guid: d184cd176ef01e749bd5176f1d8dee0a
   m_configObjects: {}
